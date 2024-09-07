@@ -16,7 +16,6 @@ vk.set("n", "<leader>m", ":wa | !cat input.txt | node %<CR>")
 vk.set("n", "<leader>ss", ":tabnew server | terminal browser-sync start --server --files **/* <CR> :tabp <CR>")
 vk.set("n", "<leader>ga", ":!git add .;git commit -m 'WOP'; git push <CR>")
 vk.set("n", "<leader>ve", ":edit ~/.config/nvim/lua/john/ <CR>")
-vk.set("n", "<leader>vw", ":VimwikiIndex<CR>")
 
 vk.set("n", "<C-s>", ":w<CR>")
 vk.set("n", "<leader>zm", ":ZenMode<CR>")
