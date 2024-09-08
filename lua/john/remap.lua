@@ -8,10 +8,6 @@ vim.g.vimwiki_key_mappings = { table_mappings = 0 }; -- disable table mappings
 vim.g.copilot_filetypes = {markdown = true}
 vk.set("n", "ts", ":w | !npm test<CR>");
 v.api.nvim_set_keymap("n", "<leader>r", ":w <bar> lua RunFiletypeInterpreter()<CR>", { silent = true })
-vk.set("n", "di$", "dt$dT$") -- Delete in $ HERE $
--- code forces input output testing
-vk.set("n", "<F7>", ":cprev<CR>")
-vk.set("n", "<F8>", ":cnext<CR>")
 vk.set("n", "<leader>m", ":wa | !cat input.txt | node %<CR>")
 vk.set("n", "<leader>ss", ":tabnew server | terminal browser-sync start --server --files **/* <CR> :tabp <CR>")
 vk.set("n", "<leader>ga", ":!git add .;git commit -m 'WOP'; git push <CR>")

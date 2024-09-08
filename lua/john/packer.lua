@@ -66,7 +66,6 @@ return require('packer').startup(function(use)
         use('nvim-lua/plenary.nvim')
         use('mfussenegger/nvim-dap')
         use('folke/zen-mode.nvim')
-        use('github/copilot.vim')
         use('xiyaowong/transparent.nvim')
         use({
             "stevearc/oil.nvim",
