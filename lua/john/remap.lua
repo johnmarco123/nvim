@@ -1,8 +1,6 @@
 v = vim
 vk = vim.keymap
 -- Create a keybinding to run the current filetype interpreter
--- take all /TODOS and output them to todo.txt
-
 -- remap vimwiki to allow copilot autocompletion
 vim.g.vimwiki_key_mappings = { table_mappings = 0 }; -- disable table mappings
 vim.g.copilot_filetypes = {markdown = true}

@@ -57,7 +57,7 @@ return require('packer').startup(function(use)
             requires = { 'nvim-tree/nvim-web-devicons', opt = true }
         }
         -- math linter
-        use('jbyuki/nabla.nvim')
+        --use('jbyuki/nabla.nvim')
         -- note taking
         use('vimwiki/vimwiki')
         use('neovim/nvim-lspconfig')
