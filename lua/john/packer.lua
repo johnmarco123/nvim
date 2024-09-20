@@ -67,10 +67,11 @@ return require('packer').startup(function(use)
         use('mfussenegger/nvim-dap')
         use('folke/zen-mode.nvim')
         use('xiyaowong/transparent.nvim')
-        use({
-            "stevearc/oil.nvim",
-            config = function()
-                require("oil").setup()
-            end,
-        })
+        use('ggandor/leap.nvim')
+        --use({
+        --    "stevearc/oil.nvim",
+        --    config = function()
+        --        require("oil").setup()
+        --    end,
+        --})
     end)
