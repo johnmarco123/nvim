@@ -38,3 +38,7 @@ require('telescope').setup{
 -- delete files added to harpoon
 --vim.keymap.set("n", "<C-p>", function() toggle_telescope(harpoon:list()) end,
 --    { desc = "Open harpoon window" })
+
+return { 'nvim-telescope/telescope.nvim',
+    dependencies = { {'nvim-lua/plenary.nvim'} }
+}
