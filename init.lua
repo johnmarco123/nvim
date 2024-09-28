@@ -1,1 +1,2 @@
+-- yay
 require('config.lazy')
