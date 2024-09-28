@@ -5,11 +5,11 @@ vk = vim.keymap
 vim.g.vimwiki_key_mappings = { table_mappings = 0 }; -- disable table mappings
 vim.g.copilot_filetypes = {markdown = true}
 vk.set("n", "ts", ":w | !npm test<CR>");
-v.api.nvim_set_keymap("n", "<leader>r", ":w <bar> lua RunFiletypeInterpreter()<CR>", { silent = true })
 vk.set("n", "<leader>m", ":wa | !cat input.txt | node %<CR>")
 vk.set("n", "<leader>ss", ":tabnew server | terminal browser-sync start --server --files **/* <CR> :tabp <CR>")
 vk.set("n", "<leader>ga", ":!git add .;git commit -m 'WOP'; git push <CR>")
 vk.set("n", "<leader>ve", ":edit ~/.config/nvim/lua/john/ <CR>")
+vk.set("n", "<leader>vi", ":edit ~/vimwiki/vim bible.wiki <CR>")
 vk.set("n", "<leader>td", ":edit ~/vimwiki/Tasks.wiki <CR>")
 
 vk.set("n", "<C-s>", ":w<CR>")
@@ -37,8 +37,8 @@ vk.set("n", "<leader>f", function()
     v.lsp.buf.format()
 end)
 -- M = alt
-vk.set("n", "<M-k>", ":cprev<CR>zz")
-vk.set("n", "<M-j>", ":cnext<CR>zz")
+vk.set("n", "<C-K>", ":cprev<CR>zz")
+vk.set("n", "<C-J>", ":cnext<CR>zz")
 
 --vk.set("n", "<leader>k", "<cmd>lnext<CR>zz")
 --vk.set("n", "<leader>j", "<cmd>lprev<CR>zz")

@@ -1,23 +1,28 @@
 local lsp = require('lsp-zero')
 
 -- this little shit broke the gi command!
--- lsp.preset('recommended')
+lsp.preset('recommended')
 lsp.preset()
 
 lsp.ensure_installed({
-	'eslint',
 	'lua_ls',
-	'rust_analyzer',
+    'ts_ls'
 })
-
-local cmp = require('cmp')
-local cmp_select = {behaviour = cmp.SelectBehavior.Select}
-local cmp_mappings = lsp.defaults.cmp_mappings({
-	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
-	['<C-n>'] = cmp.mapping.select_prev_item(cmp_select),
-	['<C-y>'] = cmp.mapping.confirm({select = true}),
-	['<C-Space>'] = cmp.mapping.complete(),
-})
+--local cmp = require('cmp')
+--local cmp_select = {behaviour = cmp.SelectBehavior.Select}
+--local cmp_mappings = lsp.defaults.cmp_mappings({
+--	['<C-p>'] = cmp.mapping.select_prev_item(cmp_select),
+--	['<C-n>'] = cmp.mapping.select_prev_item(cmp_select),
+--	['<C-y>'] = cmp.mapping.confirm({select = true}),
+--	['<C-Space>'] = cmp.mapping.complete(),
+--})
+--
+--cmp.setup.filetype({"sql"}, {
+--    sources = {
+--        {name = "vim-dadbod-completion"},
+--        {name = "buffer"},
+--    },
+--})
 
 lsp.set_preferences({
 	sign_icons = { }
@@ -44,3 +49,4 @@ lsp.setup({
         filetypes = { "rust" },
     },
 })
+

@@ -22,3 +22,4 @@ function RunFiletypeInterpreter()
     print("No interpreter found for filetype " .. filetype)
   end
 end
+vim.api.nvim_set_keymap("n", "<leader>r", ":w <bar> lua RunFiletypeInterpreter()<CR>", { silent = true })
