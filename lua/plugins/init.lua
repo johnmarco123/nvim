@@ -1,22 +1,18 @@
 return {
+    globals = {'vim'},
     'nvim-lua/plenary.nvim',
-    'nvim-treesitter/playground',
     'mbbill/undotree',
-    'ThePrimeagen/vim-be-good',
+    'Eandrju/cellular-automaton.nvim',
     {
         'nvim-lualine/lualine.nvim',
         dependencies = { 'nvim-tree/nvim-web-devicons', opt = true }
     },
     --'jbyuki/nabla.nvim' -- math linter
     -- note taking
-    'simrat39/rust-tools.nvim',
-    'tpope/vim-dadbod',
-    'kristijanhusak/vim-dadbod-completion',
-    'kristijanhusak/vim-dadbod-ui',
+    -- 'simrat39/rust-tools.nvim',
     -- Debugging
-    --'mfussenegger/nvim-dap'
+    --'mfussenegger/nvim-dap' <-- from prabs phpstorm
     --'folke/zen-mode.nvim'
-
     --'ggandor/leap.nvim'
     --({
     --    "stevearc/oil.nvim",
