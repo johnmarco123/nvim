@@ -1,3 +1,9 @@
+-- allow you to move files out of a directory with netrw
+-- This allows for netrw move files from sub directories to parent directories,
+-- however it also changes the current working directory... which messes up
+-- fuzzy finding a project
+-- vim.g.netrw_keepdir = 0
+
 vim.o.splitright = true -- when splitting nvim does it split to right or left
 vim.o.nu = true -- numbers on the left
 vim.o.relativenumber = true -- relative numbers for neovim
