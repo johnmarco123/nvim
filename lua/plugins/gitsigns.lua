@@ -15,6 +15,24 @@ return {
         vim.keymap.set('n', '<leader>hd', gitsigns.diffthis)
         vim.keymap.set('n', '<leader>hD', function() gitsigns.diffthis('~') end)
         vim.keymap.set('n', '<leader>tD', gitsigns.toggle_deleted)
+    -- Navigation
+    vim.keymap.set('n', ']c', function()
+      if vim.wo.diff then
+        vim.cmd.normal({']c', bang = true})
+      else
+        gitsigns.nav_hunk('next')
+      end
+    end)
+
+    vim.keymap.set('n', '[c', function()
+      if vim.wo.diff then
+        vim.cmd.normal({'[c', bang = true})
+      else
+        gitsigns.nav_hunk('prev')
+      end
+    end)
+
+
         gitsigns.setup {
           signs = {
             add          = { text = '┃' },
