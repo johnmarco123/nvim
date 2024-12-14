@@ -6,7 +6,6 @@ vim.g.vimwiki_key_mappings = { table_mappings = 0 }; -- disable table mappings
 -- auto refreshing server with browser-sync (only tested and working on windows
 -- machine)
 -- vim.keymap.set("n", "<leader>ss", ":tabnew server | terminal browser-sync start --server --files **/* <CR> :tabp <CR>")
-vim.keymap.set("n", "<leader>ga", ":!git add .;git commit -m 'WOP'; git push <CR>")
 vim.keymap.set("n", "<leader>ve", ":edit ~/.config/nvim/lua/ <CR>")
 vim.keymap.set("n", "<leader>vi", ":edit ~/vimwiki/vim bible.wiki <CR>")
 vim.keymap.set("n", "<leader>bi", ":edit ~/vimwiki/ubuntu bible.wiki<CR>")
