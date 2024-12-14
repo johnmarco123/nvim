@@ -51,7 +51,8 @@ vim.keymap.set("n", "<Down>", ":cnext<CR>")
 
 vim.keymap.set("n", "<leader>vs", function()
     local cwd = vim.fn.getcwd()
-    vim.cmd("silent !code " .. cwd)
+    vim.cmd("silent !i3 workspace 6")
+    vim.cmd("silent !code --no-sandbox --user-data-dir $HOME/.vsroot " .. cwd)
 end)
 --
 -- shortcut for find and replace when you are on the word you want to replace
