@@ -16,9 +16,9 @@ vim.keymap.set("n", "<C-s>", ":w<CR>")
 -- Check if oil.nvim is loaded
 local status, oil = pcall(require, "oil")
 if status then
-  vim.keymap.set("n", "<leader>pv", ":Oil<CR>")
+    vim.keymap.set("n", "<leader>pv", ":Oil<CR>")
 else
-  vim.keymap.set("n", "<leader>pv", vim.cmd.Explore)
+    vim.keymap.set("n", "<leader>pv", vim.cmd.Explore)
 end
 vim.keymap.set('n', '<leader>u', vim.cmd.UndotreeToggle)
 vim.keymap.set("v", "J", ":m '>+1<CR>gv=gv")
@@ -48,10 +48,11 @@ end)
 --
 vim.keymap.set("n", "<Up>", ":cprev<CR>")
 vim.keymap.set("n", "<Down>", ":cnext<CR>")
---vim.keymap.set("n", "<C-K>", ":cprev<CR>zz")
---vim.keymap.set("n", "<C-J>", ":cnext<CR>zz")
---vim.keymap.set("n", "<leader>k", "<cmd>lnext<CR>zz")
---vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
+
+vim.keymap.set("n", "<leader>vs", function()
+    local cwd = vim.fn.getcwd()
+    vim.cmd("silent !code " .. cwd)
+end)
 --
 -- shortcut for find and replace when you are on the word you want to replace
 vim.keymap.set("n", "<leader>c", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/g<Left><Left>")
