@@ -24,3 +24,16 @@ function RunFiletypeInterpreter()
   end
 end
 vim.api.nvim_set_keymap("n", "<leader>r", ":w <bar> lua RunFiletypeInterpreter()<CR>", { silent = true })
+
+-- Have a todo list per git branch you are on
+function GoToGitBranchTodoList()
+  local branch = vim.fn.system("git branch --show-current"):gsub("%s+", "")
+  if branch == "" then
+    print("Not in a Git repository!")
+    return
+  end
+  local path = "~/vimwiki/" .. branch
+  vim.cmd("vs " .. path)
+end
+
+vim.api.nvim_set_keymap("n", "gd", ":lua GoToGitBranchTodoList()<CR>", { noremap = true, silent = true })
