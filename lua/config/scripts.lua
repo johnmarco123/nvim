@@ -60,3 +60,4 @@ function GitTodo()
 end
 -- Map the function to <leader>gd
 vim.api.nvim_set_keymap("n", "<leader>gd", ":lua GitTodo()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>pd", 'o?><pre><?php print_r()</pre><?php<ESC>F(p', { noremap = true, silent = true })
