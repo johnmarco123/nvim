@@ -25,15 +25,38 @@ function RunFiletypeInterpreter()
 end
 vim.api.nvim_set_keymap("n", "<leader>r", ":w <bar> lua RunFiletypeInterpreter()<CR>", { silent = true })
 
--- Have a todo list per git branch you are on
-function GoToGitBranchTodoList()
-  local branch = vim.fn.system("git branch --show-current"):gsub("%s+", "")
-  if branch == "" then
-    print("Not in a Git repository!")
-    return
-  end
-  local path = "~/vimwiki/" .. branch
-  vim.cmd("vs " .. path)
-end
+function GitTodo()
+    -- Get the current git branch name
+    local handle = io.popen("git rev-parse --abbrev-ref HEAD")
+    if not handle then
+        print("Failed to execute git command")
+        return
+    end
+    local branch_name = handle:read("*a"):gsub("%s+", "") -- Trim whitespace
+    handle:close()
 
-vim.api.nvim_set_keymap("n", "gd", ":lua GoToGitBranchTodoList()<CR>", { noremap = true, silent = true })
+    if branch_name == "" then
+        print("Not in a Git repository")
+        return
+    end
+
+    -- Construct the file path
+    local file_path = vim.fn.expand("~/vimwiki/tickets/" .. branch_name .. ".wiki")
+
+    -- Open the file in the current buffer
+    vim.cmd("edit " .. file_path)
+
+    -- If the file is empty or new, write the template
+    if vim.fn.line2byte('$') == -1 then
+        local template = string.format(
+            "# TODO List for branch: \n %s\n\n= First Thoughts = \n= Questions = \n",
+            branch_name
+        )
+        vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(template, "\n"))
+        print("Template added to new file: " .. file_path)
+    else
+        print("Opened file: " .. file_path)
+    end
+end
+-- Map the function to <leader>gd
+vim.api.nvim_set_keymap("n", "<leader>gd", ":lua GitTodo()<CR>", { noremap = true, silent = true })
