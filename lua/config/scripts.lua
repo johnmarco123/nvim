@@ -35,6 +35,7 @@ function GitTodo()
     local branch_name = handle:read("*a"):gsub("%s+", "") -- Trim whitespace
     handle:close()
 
+<<<<<<< HEAD
     if branch_name == "" then
         print("Not in a Git repository")
         return
@@ -61,3 +62,7 @@ end
 -- Map the function to <leader>gd
 vim.api.nvim_set_keymap("n", "<leader>gd", ":lua GitTodo()<CR>", { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>pd", 'o?><pre><?php print_r()</pre><?php<ESC>F(p', { noremap = true, silent = true })
+=======
+vim.api.nvim_set_keymap("n", "gd", ":lua GoToGitBranchTodoList()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>qt", "<cmd>lua require('telescope.builtin').quickfix()<CR>",{ noremap = true, silent = true })
+>>>>>>> 185e39c (added <leader>qt now sends quickfix list back to telescope)
