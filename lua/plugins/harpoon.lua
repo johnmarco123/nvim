@@ -1,5 +1,5 @@
 return {
-    "ThePrimeagen/harpoon",
+    "johnmarco123/harpoon",
     branch = "harpoon2",
     dependencies =  {"nvim-lua/plenary.nvim"},
     -- so that the buffer saves upon leaving and you dont have to ctrl w every
@@ -11,6 +11,7 @@ return {
         harpoon:setup({
             settings = {
                 save_on_toggle = true,
+                use_git_branch_name = true,
             },
         })
         vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
