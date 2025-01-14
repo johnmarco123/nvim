@@ -59,5 +59,10 @@ function GitTodo()
     end
 end
 vim.api.nvim_set_keymap("n", "<leader>gd", ":lua GitTodo()<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<leader>pd", 'o?><pre><?php print_r()</pre><?php<ESC>F(p', { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<leader>pd", 'o?><pre><?php print_r();?></pre><?php<ESC>F(p', { noremap = true, silent = true })
 vim.api.nvim_set_keymap("n", "<leader>qt", "<cmd>lua require('telescope.builtin').quickfix()<CR>",{ noremap = true, silent = true })
+vim.keymap.set("n", "<leader>vs", function()
+    local cwd = vim.fn.getcwd()
+    vim.cmd("silent !code " .. cwd .. " --no-sandbox --user-data-dir .vscode")
+    end)
+
