@@ -49,7 +49,7 @@ function GitTodo()
     -- If the file is empty or new, write the template
     if vim.fn.line2byte('$') == -1 then
         local template = string.format(
-            "# TODO List for branch: \n %s\n\n= First Thoughts = \n= Questions = \n",
+            "# TODO List for branch: \n %s\n\n= First Thoughts = \n= Questions = \n= Conclusions =",
             branch_name
         )
         vim.api.nvim_buf_set_lines(0, 0, -1, false, vim.split(template, "\n"))
