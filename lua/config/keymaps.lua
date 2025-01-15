@@ -47,10 +47,6 @@ end)
 vim.keymap.set("n", "<Up>", ":cprev<CR>")
 vim.keymap.set("n", "<Down>", ":cnext<CR>")
 
-vim.keymap.set("n", "<leader>vs", function()
-    local cwd = vim.fn.getcwd()
-    vim.cmd("silent !code " .. cwd .. " --no-sandbox --user-data-dir .vscode")
-end)
 --
 -- shortcut for find and replace when you are on the word you want to replace
 vim.keymap.set("n", "<leader>c", ":%s/\\<<C-r><C-w>\\>/<C-r><C-w>/g<Left><Left>")

@@ -64,5 +64,4 @@ vim.api.nvim_set_keymap("n", "<leader>qt", "<cmd>lua require('telescope.builtin'
 vim.keymap.set("n", "<leader>vs", function()
     local cwd = vim.fn.getcwd()
     vim.cmd("silent !code " .. cwd .. " --no-sandbox --user-data-dir .vscode")
-    end)
-
+end)
